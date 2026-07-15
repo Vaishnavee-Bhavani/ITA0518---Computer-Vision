@@ -1,0 +1,19 @@
+The concept map visualizes the sequential workflow of digital image formation, tracing how a real-world scene is transformed into a discrete digital representation.
+
+The pipeline initiates when ambient illumination reflects off a scene and is directed through an optics and lens system onto a CMOS or CCD sensor array.
+
+Stage 1 (Sensing & Capture) leverages the photoelectric effect and a Color Filter Array (CFA/Bayer) to perform initial light and color detection.
+
+This sensing stage fundamentally establishes the baseline for dynamic range and color reproduction, heavily guided by literature on sensor noise models.
+
+Stage 2 (Sampling) governs the continuous-to-discrete transition, mapping the continuous optical projection onto a fixed pixel sampling grid.
+
+Adherence to the Nyquist-Shannon sampling theorem preserves detail resolution, whereas theorem violations yield destructive aliasing and moiré artifacts.
+
+Stage 3 (Quantization) represents the final analog-to-digital converter (ADC) phase, translating electrical voltages into discrete digital bit depths.
+
+The map shows a clear cause-and-effect relationship where higher bit depths secure smooth tonal gradients, while lower bit depths cause contouring and banding.
+
+The workflow culminates in the rightmost columns, balancing desirable image quality parameters (resolution, color accuracy) against inherent artifacts and limitations.
+
+Ultimately, the diagram acts as a structural reference connecting physical properties, mathematical sampling criteria, and bit allocations to explain final image fidelity.
