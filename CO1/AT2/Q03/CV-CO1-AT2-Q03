@@ -1,0 +1,19 @@
+The concept map splits visual fidelity into two fundamental pillars: Image Resolution (spatial density) and Intensity Levels (color/tonal depth).
+
+Spatial resolution defines the pixel grid structure, directly governing the sharpness, fine detail retrieval, and geometric precision of a scene.
+
+Intensity levels regulate contrast, color depth, and dynamic range, which are mathematically bounded by the system's bit-depth capabilities.
+
+When both resolution and intensity levels are high, they produce optimal image quality characterized by smooth gradients and accurate spatial representation.
+
+In contrast, dropping these parameters introduces noticeable artifacts like blurring, blocky pixelation, and harsh color banding.
+
+The map illustrates a direct cause-and-effect relationship where these visual characteristics strictly dictate downstream image usability.
+
+High-quality visual data is shown to be non-negotiable for high-stakes domains like medical diagnostics, scientific analysis, and surveillance tracking.
+
+Reduced-quality configurations are categorized as highly useful for lightweight tasks, such as quick web previews and low-bandwidth transmission.
+
+Grounded in perceptual literature, the framework highlights how human vision thresholds (like those from Marr and Szeliski) limit what information we can naturally extract.
+
+Ultimately, the chart map serves as a decision framework for balancing system storage constraints against the target task's performance requirements.
