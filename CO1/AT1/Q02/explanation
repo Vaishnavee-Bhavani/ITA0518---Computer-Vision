@@ -1,0 +1,31 @@
+When capturing a real-world scene under low-light conditions, the physical restrictions of the image sensing and acquisition pipeline dictate the fidelity of the final digital image. The process cascades through the following critical stages:
+
+1. Photonic Deprivation and Sensor Characteristics
+Under low light, the number of photons hitting the camera sensor per unit area is drastically reduced.
+
+Quantum Efficiency (QE): The sensor's ability to convert incoming photons into electrons becomes the primary bottleneck. A lower QE means even fewer photons are registered, directly dropping the baseline signal level.
+
+Full-Well Capacity (FWC) and Pixel Size: Larger pixels with a higher FWC can collect more photons over a given exposure time, making them inherently better suited for low-light retrieval compared to dense, microscopic pixel grids.
+
+2. The Dominance of Noise Sources
+In ideal lighting, the visual signal overpowers background noise. In low light, the Signal-to-Noise Ratio (SNR) plummets as various noise generation mechanisms begin to dominate the signal:
+
+Photon Shot Noise: Because light arrives randomly, low photon counts lead to high relative statistical fluctuations. This signal-dependent noise creates a grainy appearance across the scene.
+
+Dark Current Noise: Even without light, thermal energy within the silicon generates random electrons over time. During the longer exposures required for low light, this thermal glow accumulates, severely degrading the dark noise floor and eating into the image's usable Dynamic Range.
+
+Read Noise: The electronic circuitry introduces a baseline "jiggling" of the signal when reading the voltages off the sensor matrix. In low light, this fixed noise floor can easily overwhelm the weak target signal.
+
+3. Analog-to-Digital Conversion (ADC) Challenges
+The weak analog voltages must be amplified before conversion.
+
+Quantization Noise: When the Analog-to-Digital Converter (ADC) maps these amplified, noisy signals into discrete bit depths, the mathematical rounding errors introduce quantization noise.
+
+Banding and Contouring: Because the structural signal is heavily compressed into the lowest intervals of the sensor's range, the final digital output frequently exhibits distinct posterization, poster-like banding, and a loss of smooth tonal gradients.
+
+4. Downstream Image Signal Processing (ISP) Impact
+The raw linear data emerging from a low-light capture is heavily corrupted and visually unappealing. The camera's internal software must aggressively compensate:
+
+Demosaicing Artifacts: Reconstructing full color from a Bayer color filter array becomes highly inaccurate when the neighboring pixel values are dominated by random noise rather than true scene radiance, resulting in severe color mottling and chroma artifacts.
+
+Aggressive Denoising & Loss of Detail: Digital algorithms apply heavy low-pass filters to suppress the grain. While this cleans up the image, it strips away fine, high-frequency spatial details and micro-textures, culminating in a final digital image that looks noticeably soft, blurred, or "waxy".
