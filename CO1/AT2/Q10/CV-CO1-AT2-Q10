@@ -1,0 +1,19 @@
+The concept map visualizes how continuous spatial and spectral light from a real-world scene undergoes discretization during initial signal acquisition.
+
+This physical light input is processed through spatial sampling, which relies on an Analog-to-Digital Converter (ADC) to create a digital grid.
+
+The resulting sampling frequency, grid size, and pixel density determine the structural fidelity of the digital conversion.
+
+This process is fundamentally constrained by the Nyquist-Shannon Sampling Theorem, a theoretical requirement based on the scene's spatial frequency content.
+
+When the sampling frequency successfully satisfies the Nyquist Theorem, it establishes a sufficient sampling rate via high pixel density.
+
+This optimal pathway yields an accurate digital representation, culminating in a sharp, detailed final image.
+
+Conversely, failing to meet this mathematical threshold violates the Nyquist Theorem and leads directly to an insufficient sampling rate.
+
+This state of undersampling causes aliasing, a phenomenon where high spatial frequencies fold into low frequencies, misinterpreting the signal content.
+
+The map outlines a direct cause-and-effect link where aliasing creates severe, irreversible visual artifacts and image distortion.
+
+These destructive results manifest as wavy Moiré patterns, stair-stepping jagged edges, and a permanent loss of high-frequency detail through false textures.
