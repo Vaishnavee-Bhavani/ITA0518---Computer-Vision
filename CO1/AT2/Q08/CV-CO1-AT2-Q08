@@ -1,0 +1,19 @@
+The concept map structures Spatial Resolution into three primary dimensions: Pixel Density, Sampling Rate, and Application Requirements.
+
+Pixel Density (measured in PPI/DPI) defines the physical grid layout of the matrix, directly influencing human detail perception and screen pitch.
+
+The Sampling Rate represents the spatial frequency of capture, governed strictly by the foundational Nyquist Theorem established by Shannon (1949).
+
+Violating the Nyquist limit creates data misalignments, which manifest as destructive aliasing and geometric artifacts in the digital output.
+
+These sampling characteristics are physically driven by Sensor Properties, where pixel size, quantum efficiency, and noise levels set the baseline limits (Szeliski, 2010).
+
+In parallel, the Optics System acts as a primary filter, where lens quality, aberrations, and the Modulation Transfer Function (MTF) determine resolving limits (Szeliski, 2010).
+
+External Illumination Conditions modify the signal by controlling light intensity and contrast, enabling proper sensor activation (Gonzalez & Woods, 2018).
+
+Downstream Processing & Compression algorithms enable image scaling but risk introducing structural compression artifacts (Gonzalez & Woods, 2018).
+
+The rightmost branch highlights that resolution choices must match target Application Requirements, factoring in human eye limitations and viewing distance.
+
+Ultimately, high-stakes tasks like medical or satellite imaging demand maximum resolution, whereas web applications scale down to prioritize storage and speed.
