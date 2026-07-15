@@ -1,0 +1,37 @@
+### The Cause of Aliasing Artifacts
+
+Aliasing is a structural distortion that occurs during the **sampling** stage of digital image formation, where a continuous optical scene is converted into a discrete pixel grid.
+
+* **Spatial Sampling and the Nyquist Limit:** According to the **Nyquist-Shannon Sampling Theorem**, an image sensor must sample a scene at a frequency ($f_s$) greater than twice the highest spatial frequency ($f_{max}$) present in the continuous optical input ($f_s > 2f_{max}$).
+* **Undersampling:** When the camera sensor has an insufficient sampling rate or low pixel density relative to the fine details in the scene (such as brick walls, fabrics, or distant geometric grids), the Nyquist condition is violated.
+* **Frequency Folding:** Because the spatial grid is too coarse to resolve these rapid variations, the high-frequency scene details "fold back" into lower frequencies. The system misinterprets these high-frequency inputs, mapping them into incorrect, lower-frequency digital signals.
+* **Visual Manifestation:** This mathematical misinterpretation creates irreversible visual artifacts, most notably wavy **Moiré patterns**, **false textures**, and **jagged edges** (stair-stepping) on diagonal lines.
+
+#### *Note on Quantization vs. Sampling:*
+
+While aliasing is purely a **sampling spatial frequency failure**, it interacts indirectly with **quantization** (the process of converting continuous voltage amplitudes into discrete digital bit depths). If an image is undersampled *and* quantized at a low bit depth, the jagged, aliased edges lose smooth tonal gradients. Instead of smooth transitions, the quantization process forces these false low-frequency waves into harsh, stepped boundary lines, exacerbating the visibility of the distortion.
+
+---
+
+### Proposed Corrective Approaches
+
+Because aliasing represents a permanent loss of high-frequency data at the moment of capture, true post-capture digital reversal is mathematically ill-posed. Effective engineering solutions focus on physical prevention or advanced computational reconstruction.
+
+#### 1. Hardware-Based Prevention: Optical Anti-Aliasing (Low-Pass) Filters
+
+The most reliable method to eliminate aliasing is to modify the optical path before the light hits the sensor array.
+
+* **Mechanism:** An Optical Low-Pass Filter (OLPF) is placed directly in front of the image sensor. It acts as a physical high-cut filter, introducing a microscopic, controlled blur to the incoming light.
+* **How it corrects it:** By attenuating or removing the spatial frequencies that exceed the sensor's Nyquist limit ($f_{max} \ge \frac{f_s}{2}$) before sampling occurs, it ensures that no high-frequency components remain to fold back into Moiré patterns.
+
+#### 2. System Architecture Upgrade: Increasing Sensor Pixel Density
+
+* **Mechanism:** Replacing the imaging system with a sensor featuring a smaller pixel pitch and higher resolution.
+* **How it corrects it:** Elevating the native spatial sampling rate shifts the system's Nyquist threshold significantly higher. This allows the sensor to accurately resolve ultra-fine details as true high-frequency data rather than aliasing them, keeping the image sharp without requiring an aggressive physical blur filter.
+
+#### 3. Post-Capture Software Correction: Deep Learning Super-Resolution
+
+If the artifacted image has already been captured and the hardware cannot be altered, digital post-processing must be deployed.
+
+* **Mechanism:** Applying deep convolutional neural networks (CNNs) or Generative Adversarial Networks (GANs)—such as Enhanced Super-Resolution GANs (ESRGAN)—trained specifically on aliased/ground-truth pairs.
+* **How it corrects it:** Standard digital interpolation (like bilinear or bicubic filtering) merely diffuses the artifact, resulting in a muddy, blurred image. Instead, deep learning models leverage learned structural priors to recognize the geometric signatures of Moiré patterns and jagged stair-stepping. The algorithm computationally suppresses the false low-frequency waves and intelligently reconstructs plausible high-frequency boundaries, restoring visual clarity.
