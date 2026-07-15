@@ -1,0 +1,21 @@
+[THE CONCEPT MAP IS UPLOADED AS A IMAGE FILE SEPERATELY]
+
+The process begins with a real-world scene, where continuous ambient light, color, and geometry create scene radiance.
+
+An optics and lens system focuses this light, introducing inherent physical distortions, blurring, and aberrations along the way.
+
+The focused light hits an image sensor, which uses a Color Filter Array (CFA) to capture specific wavelengths via the photoelectric effect.
+
+This sensor generates a noisy, continuous analog voltage signal that represents the raw optical data.
+
+An Analog-to-Digital Converter (ADC) samples and quantizes this voltage, transforming it into discrete digital bits.
+
+The resulting output is a linear RAW image file, preserving high bit-depth information directly from the sensor.
+
+An Image Signal Processor (ISP) then runs intermediate transformations like demosaicing to reconstruct full RGB color.
+
+Additional processing steps like noise reduction, white balancing, and tone mapping adapt the image for human perception.
+
+The final output is formatted into standard digital image representations, mapped to specific color spaces like sRGB.
+
+Ultimately, every stage relies on critical dependencies, where hardware quality (optics and sensors) dictates final digital compression and storage efficiency.
