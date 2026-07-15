@@ -1,0 +1,19 @@
+The concept map organizes Computer Vision into a clear pyramid hierarchy, moving upwards from raw pixel processing to cognitive reasoning.
+
+Low-Level Processing forms the foundation, operating directly on input image pixels to execute noise filtering and color space transformations.
+
+This bottom layer extracts primitive features like edges, shapes, and textures, leveraging classic literature examples such as Canny's edge detection and SIFT/SURF descriptors.
+
+The output flows up into Mid-Level Analysis, which groups these low-level primitives into mathematically meaningful structures and regions.
+
+This mid-tier handles tasks like image segmentation, object detection (bounding boxes), classification (labels), and motion tracking over time.
+
+The mid-level analysis integrates seminal deep learning and localization breakthroughs, citing architectures like YOLO (Redmon et al.) and ImageNet classification (Krizhevsky et al.).
+
+Information then feeds into High-Level Interpretation, where the system transitions from merely identifying objects to understanding context.
+
+This apex tier manages complex scene understanding, spatial relationships, activity recognition, and full 3D environment reconstruction.
+
+Advanced high-level cognitive tasks—such as visual reasoning, storytelling, and intent prediction—are linked to pioneering studies by researchers like Fei-Fei Li et al.
+
+Ultimately, the map demonstrates how computer vision acts as an interpretive pipeline, transforming unstructured light data into structured, intelligent decisions.
