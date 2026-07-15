@@ -1,0 +1,19 @@
+The pipeline structures computer vision into five sequential stages, moving hierarchically from raw data ingestion to high-level semantic reasoning.
+
+Data Acquisition serves as the foundation, capturing environmental signals through modalities like cameras and LiDAR, grounded in classic vision frameworks like David Marr's theory.
+
+Pre-processing refines this raw input via noise reduction, geometric transformations, and initial segmentation to ensure data consistency, leaning on fundamental image processing literature (e.g., Gonzalez & Woods).
+
+Feature Extraction bridges the gap from pixels to patterns, transitioning from low-level edges (SIFT) to deep, high-level representations (AlexNet) to reduce dimensionality.
+
+Analysis & Interpretation acts as the mid-level processing hub, identifying and localizing entities using seminal object detection architectures like YOLO and Faster R-CNN.
+
+The final stage, Semantic Reasoning, synthesizes these detections into deep context, analyzing activities, actions, and complex real-world relationships.
+
+This high-level reasoning culminates in actionable, meaningful outputs such as semantic segmentation maps, event triggers, and structured data graphs.
+
+Continuous feedback loops route information from downstream reasoning back to earlier stages, allowing the system to refine its models dynamically over time.
+
+Supporting the entire pipeline are unified dependencies, including hardware compute resources (GPUs/CPUs) and foundational datasets like ImageNet and MS COCO.
+
+Ultimately, the map demonstrates how computer vision transforms unstructured, noisy physical light into structured, intelligent digital decisions through a collaborative chain of academic breakthroughs.
