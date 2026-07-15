@@ -1,0 +1,19 @@
+This diagram visualizes the complex workflow transforming a real-world scene into a digital image.
+
+The pipeline is organized chronologically, moving from physical hardware capture to digital representation.
+
+Optics and sensors initiate the process by converting light radiance into raw analog signals (voltages).
+
+Physical artifacts are introduced here, including lens aberrations, blur, and various sensor noise types.
+
+An Analog-to-Digital Converter (ADC) discretizes these signals, implementing crucial sampling and quantization processes.
+
+The mathematical dependencies section shows how optics quality dictates required sampling rates to prevent aliasing.
+
+The output of digitization is linear RAW data, which is usually high bit-depth and mosaiced.
+
+The Image Signal Processor (ISP) then executes a software pipeline to optimize the data for human viewing.
+
+Key ISP steps include demosaicing to reconstruct color and tone mapping to compress dynamic range.
+
+Ultimately, the chart highlights how physical hardware constraints dictate final digital image fidelity and storage needs.
